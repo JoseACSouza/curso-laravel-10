@@ -10,7 +10,6 @@ use function Laravel\Prompts\search;
 class productsController extends Controller
 
 // index() mais utilizada para paginação
-// delete() para deleção
 {
     public function __construct(Products $products)
     {
@@ -26,8 +25,9 @@ class productsController extends Controller
 
     public function delete(Request $request)
     {
-        $search = $request->search;
-        $findProducts = $this->products->getProductSearch(searchText: $search ?? '');
-        return view('pages.products.pagination', compact('findProducts'));
+        $id = $request->id;
+        $buscaRegistro = Products::find($id);
+        $buscaRegistro->delete();
+        return response()->json(['succsess'=> true]);
     }
 }

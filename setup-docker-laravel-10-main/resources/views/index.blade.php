@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.115.4">
-    <title>Dashboard Template · Bootstrap v5.3</title>
+    <title>APP DE GESTÃO</title>
   
 @yield('styles')
 
@@ -115,5 +115,6 @@
     <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://malsup.github.io/jquery.blockUI.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
+    <script src="/js/projeto.js"></script>
   </body>
 </html>
