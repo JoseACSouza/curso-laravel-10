@@ -5,17 +5,19 @@
     <h1 class="h2">Produtos</h1>
   </div>
   <div>
-    <form action="" method="get" class="form-inline">
+    <form action="{{route('home')}}" method="get" class="form-inline">
       <div class="form-group mx-sm-3 mb-2">
-        <input type="text" name="pesquisar" class="form-control" placeholder="Pesquise por nome">
+        <input type="text" name="search" class="form-control" placeholder="Pesquise por nome">
       </div>
       <div class="form-group mx-sm-3 mb-2">
         <button class="btn btn-primary btn-sm mb-2">Pesquisar</button>
         <a href="" class="btn btn-success btn-sm mb-2">Adicionar Produto</a>
       </div>
     </form>
-    <h2>Section title</h2>
     <div class="table-responsive small">
+      @if ($findProducts->isEmpty())
+        <p class="mx-sm-3">Nenhum produto correspondente</p>
+      @else
       <table class="table table-striped table-sm">
         <thead>
             <tr>
@@ -31,12 +33,13 @@
                 <td>{{'R$' .' '. number_format($product->value, 2, ',', '.')}}</td>
                 <td>
                   <a href="" class="btn btn-info btn-sm">Editar</a>
-                  <a href="" class="btn btn-danger btn-sm">Excluir</a>
+                  <a href="{{route('deleteProduto')}}" class="btn btn-danger btn-sm">Excluir</a>
                 </td>
               </tr>
             @endforeach
           </tbody>
         </table>
+        @endif
       </div>
   </div>
 @endsection

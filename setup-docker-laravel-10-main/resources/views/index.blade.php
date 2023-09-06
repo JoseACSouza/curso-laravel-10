@@ -110,5 +110,10 @@
 @yield('scripts')
     <script src="/js/color-model.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js" integrity="sha384-gdQErvCNWvHQZj6XZM0dNsAoY4v+j5P1XDpNkcM3HJG1Yx04ecqIHk7+4VBOCHOG" crossorigin="anonymous"></script><script src="js/dashboard.js"></script></body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js" ></script>
+    <script src="js/dashboard.js"></script>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://malsup.github.io/jquery.blockUI.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
+  </body>
 </html>
