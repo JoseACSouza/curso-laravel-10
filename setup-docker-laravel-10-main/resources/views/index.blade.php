@@ -13,6 +13,7 @@
 
 <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" >
 <link href="{{asset('css/index.css')}}" rel="stylesheet">
+<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="{{asset('icons/apple-touch-icon.png')}}" sizes="180x180">
@@ -116,5 +117,7 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="js/dashboard.js"></script>
     <script src="/js/projeto.js"></script>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    {!! Toastr::message() !!}
   </body>
 </html>

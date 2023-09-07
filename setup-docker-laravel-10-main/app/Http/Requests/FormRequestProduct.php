@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FormRequestNewProduct extends FormRequest
+class FormRequestProduct extends FormRequest
 {
     public function authorize(): bool
     {
@@ -14,7 +14,7 @@ class FormRequestNewProduct extends FormRequest
     public function rules(): array
     {
         $request = [];
-        if($this->method() == "POST"){
+        if($this->method() == "POST"|| $this->method() == "PUT") {
             $request = [
                 'name'=>'required',
                 'value'=>'required',

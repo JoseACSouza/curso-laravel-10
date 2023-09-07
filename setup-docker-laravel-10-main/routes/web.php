@@ -15,6 +15,6 @@ Route::prefix('produtos')->group(function() {
     Route::get('/incluirProduto', [productsController::class, 'addProduto'])->name('incluirProduto');
     Route::post('/incluirProduto', [productsController::class, 'addProduto'])->name('incluirProduto');
     //att product
-    Route::get('/editarProduto', [productsController::class, 'editProduto'])->name('editarProduto');
-    Route::post('/editarProduto', [productsController::class, 'editProduto'])->name('editarProduto');
+    Route::get('/editarProduto/{id}', [productsController::class, 'editProduto'])->name('editarProduto');
+    Route::put('/editarProduto/{id}', [productsController::class, 'editProduto'])->name('editarProduto');
 });

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\FormRequestNewProduct;
+use App\Http\Requests\FormRequestProduct;
+use App\Models\Components;
 use App\Models\Products;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 
 use function Laravel\Prompts\search;
 
@@ -29,24 +31,32 @@ class productsController extends Controller
         $id = $request->id;
         $buscaRegistro = Products::find($id);
         $buscaRegistro->delete();
+        Toastr::succsses('Produto excluído com sucesso!');
         return response()->json(['succsess'=> true]);
     }
 
-    public function addProduto(FormRequestNewProduct $request){
+    public function addProduto(FormRequestProduct $request) {
         if($request->method() == 'POST') {
             $data = $request->all();
+            $componente = new Components();
+            $data['value']= $componente->formatacaoMascaraDinheiroDecimal($data['value']);
             Products::create($data);
+            Toastr::success('Produto adicionado com sucesso!');
             return redirect()->route('home');
         }
-        return view('pages.products.new-product');
+        return view('pages.products.new');
     }
 
-    public function editProduto(FormRequestNewProduct $request){
+    public function editProduto(FormRequestProduct $request, $id){
         if($request->method() == 'PUT') {
             $data = $request->all();
-            Products::create($data);
+            $componente = new Components();
+            $data['value']= $componente->formatacaoMascaraDinheiroDecimal($data['value']);
+            $searchRegs = Products::find($id);
+            $searchRegs->update($data);
             return redirect()->route('home');
         }
-        return view('pages.products.new-product');
+        $findProduct = Products::where('id','=',$id)->first();
+        return view("pages.products.update", compact('findProduct'));
     }
 }
