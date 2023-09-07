@@ -27,3 +27,5 @@ function deleteItem(url, idDoItem){
     })
   }
 }
+
+$('#mascara').mask('#.##0,00',{ reverse: true });

@@ -5,18 +5,18 @@
     <h1 class="h2">Produtos</h1>
   </div>
   <div>
-    <form action="{{route('home')}}" method="get" class="form-inline">
-      <div class="form-group mx-sm-3 mb-2">
+    <form action="{{route('home')}}" method="GET" class="row g-3">
+      <div class="col-auto">
         <input type="text" name="search" class="form-control" placeholder="Pesquise por nome">
       </div>
-      <div class="form-group mx-sm-3 mb-2">
-        <button class="btn btn-primary btn-sm mb-2">Pesquisar</button>
-        <a href="" class="btn btn-success btn-sm mb-2">Adicionar Produto</a>
+      <div class="col-auto">
+        <button class="btn btn-primary mb-2">Pesquisar</button>
+        <a href="{{route('incluirProduto')}}" class="btn btn-success mb-2">Adicionar Produto</a>
       </div>
     </form>
     <div class="table-responsive small">
       @if ($findProducts->isEmpty())
-        <p class="mx-sm-3">Nenhum produto correspondente</p>
+        <p class="mb-2">Nenhum produto correspondente</p>
       @else
       <table class="table table-striped table-sm">
         <thead>
