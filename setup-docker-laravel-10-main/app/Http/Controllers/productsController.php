@@ -31,8 +31,8 @@ class productsController extends Controller
         $id = $request->id;
         $buscaRegistro = Products::find($id);
         $buscaRegistro->delete();
-        Toastr::succsses('Produto excluído com sucesso!');
-        return response()->json(['succsess'=> true]);
+        Toastr::success('Produto excluído com sucesso!');
+        return response()->json(['success'=> true]);
     }
 
     public function addProduto(FormRequestProduct $request) {

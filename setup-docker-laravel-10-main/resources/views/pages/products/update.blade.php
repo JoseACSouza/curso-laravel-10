@@ -8,7 +8,7 @@
   @method("PUT")
   <div class="col-auto">
     <label class="visually-hidden">Nome</label>
-    <input type="text" value="{{ $findProduct->name }}" class="form-control @error('name') is-invalid @enderror" placeholder="Nome" name="name">
+    <input type="text" value="{{ isset($findProduct->name) ? $findProduct->name : old($findProduct->name) }}" class="form-control @error('name') is-invalid @enderror" placeholder="Nome" name="name">
     @if ($errors->has('name'))
       <div class="invalid-feedback"> {{$errors->first('name')}} </div>
     @endif

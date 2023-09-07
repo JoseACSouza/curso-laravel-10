@@ -6,7 +6,6 @@ function deleteItem(url, idDoItem){
       headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
       data: {
         id: idDoItem,
-
       },
       beforeSend: function () {
         $.blockUI({ 
@@ -16,7 +15,7 @@ function deleteItem(url, idDoItem){
       },
     }).done(function (data){
       $.unblockUI();
-      if (data.succsess == true) {
+      if (data.success == true) {
         window.location.reload();
       } else {
         alert('Não foi possível deletar, tente novamente!');
