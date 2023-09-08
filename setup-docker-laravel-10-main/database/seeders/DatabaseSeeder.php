@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 use Database\Seeders\productsSeeder;
 use Database\Seeders\ClientesSeeder;
+use Database\Seeders\vendasSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,6 +13,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             productsSeeder::class,
             ClientesSeeder::class,
+            vendasSeeder::class,
         ]);
     }
 }

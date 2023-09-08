@@ -14,6 +14,11 @@ class Products extends Model
         'value',
     ];
 
+    public function vendas()
+{
+    return $this->hasMany(Vendas::class);
+}
+
     public function getProductSearch(string $searchText='') {
         $products = $this->where(function ($query) use ($searchText) {
             if ($searchText) {
